@@ -11,6 +11,13 @@ using namespace sf; //for graphics
 
 int main()
 {
+    Texture Background_sky;
+    RectangleShape skybox;
+    Background_sky.loadFromFile("sky.png");
+    skybox.setSize(Vector2f(320,512));
+    skybox.setTexture(&Background_sky);
+
+
     srand(time(0));
     RenderWindow window(VideoMode(320,512),"SFML Works");  //creates a window on the screen that is 800 by 600
     window.setFramerateLimit(60); //sets the game loop to run 60 times per second
@@ -215,7 +222,7 @@ if (physics::getPosition(floor2.back()).x>160)
     while (window.isOpen()&& !Keyboard::isKeyPressed(Keyboard::Escape))     //the main game loop, exits if someone closes the window
     {
 
-        cout<<xMove<< endl;
+//        cout<<xMove<< endl;
 
         window.setView(gview);
 
@@ -236,14 +243,14 @@ if (physics::getPosition(floor2.back()).x>160)
             if (event.type == Event::MouseButtonReleased && event.mouseButton.button == Mouse::Left)
                 isMouseUp = true;
 
-        }   //ends the event loop
+        }   window.clear(); //clears the screen//ends the event loop
 
+        window.draw(skybox);
+        skybox.setPosition(Vector2f(0,physics::getPosition(dude).y-406));
 
-
-        //if (Mouse::isButtonPressed(Mouse::Left))
-        //{
-        // physics::createBox(world, Mouse::getPosition(window).x, Mouse::getPosition(window).y, 10,10);
-        //}
+        cout<<skybox.getPosition().x<<endl;
+        cout<<skybox.getPosition().y<<endl;
+        cout<<"-"<<endl;
 
 
         if (clock1.getElapsedTime().asSeconds()>3)
@@ -299,9 +306,15 @@ if (physics::getPosition(floor2.back()).x>160)
 
     if (physics::getPosition(dude).x<0){
         physics::setVelocity(dude,Vector2f(-physics::getVelocity(dude).x,physics::getVelocity(dude).y));
+    xMove=100;
 
 
     }
+    if (physics::getPosition(dude).x>320){
+        physics::setVelocity(dude,Vector2f(-physics::getVelocity(dude).x,physics::getVelocity(dude).y));
+    xMove=-100;
+}
+
 
 
 
@@ -360,7 +373,7 @@ if (physics::getPosition(floor2.back()).x>160)
 
 
 
-        window.clear(); //clears the screen
+
 
 
 
@@ -395,7 +408,11 @@ if (physics::getPosition(floor2.back()).x>160)
             case RIGHT:
                 window.draw(text2);
                 break;
+
+
         }
+
+
 
         window.display();   //displays everything on the video card to the monitor
     }   //ends the game loop
