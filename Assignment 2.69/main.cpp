@@ -43,15 +43,25 @@ int main()
     //Vectorthing
     vector<Block> floor2;
 
+    vector<RectangleShape> cloudimage;
+    Texture cloud_txt;
+    cloud_txt.loadFromFile("cloud.png");
+
     //walls
     Block floor = physics::createBox(world,-1000,5000,3000,30,b2_staticBody); //floor
     floor->GetFixtureList()->SetRestitution(0);
+
 
     int floor2_y=4900;
     int floor2_x=0;
 
     floor2.push_back(physics::createBox(world, rand()%240,floor2_y,80,2,b2_staticBody));
     floor2.back()->GetFixtureList()->SetRestitution(0);
+    physics::setBlockColor(floor2.back(),Color::Transparent);
+    cloudimage.push_back(RectangleShape(Vector2f(110,10)));
+    cloudimage.back().setTexture(&cloud_txt);
+    cloudimage.back().setPosition(Vector2f(physics::getPosition(floor2.back()).x-45,physics::getPosition(floor2.back()).y-5));
+
     if (physics::getPosition(floor2.back()).x>160)
     {
         floor2_x=rand()%100;
@@ -62,6 +72,11 @@ int main()
     }
     floor2.push_back(physics::createBox(world, floor2_x,floor2_y-100,80,2,b2_staticBody));
     floor2.back()->GetFixtureList()->SetRestitution(0);
+    physics::setBlockColor(floor2.back(),Color::Transparent);
+    cloudimage.push_back(RectangleShape(Vector2f(110,10)));
+    cloudimage.back().setTexture(&cloud_txt);
+    cloudimage.back().setPosition(Vector2f(physics::getPosition(floor2.back()).x-45,physics::getPosition(floor2.back()).y-5));
+
     if (physics::getPosition(floor2.back()).x>160)
     {
         floor2_x=rand()%100;
@@ -72,6 +87,11 @@ int main()
     }
     floor2.push_back(physics::createBox(world, floor2_x,floor2_y-200,80,2,b2_staticBody));
     floor2.back()->GetFixtureList()->SetRestitution(0);
+    physics::setBlockColor(floor2.back(),Color::Transparent);
+    cloudimage.push_back(RectangleShape(Vector2f(110,10)));
+    cloudimage.back().setTexture(&cloud_txt);
+    cloudimage.back().setPosition(Vector2f(physics::getPosition(floor2.back()).x-45,physics::getPosition(floor2.back()).y-5));
+
     if (physics::getPosition(floor2.back()).x>160)
     {
         floor2_x=rand()%100;
@@ -82,6 +102,11 @@ int main()
     }
     floor2.push_back(physics::createBox(world, floor2_x,floor2_y-300,80,2,b2_staticBody));
     floor2.back()->GetFixtureList()->SetRestitution(0);
+    physics::setBlockColor(floor2.back(),Color::Transparent);
+    cloudimage.push_back(RectangleShape(Vector2f(110,10)));
+    cloudimage.back().setTexture(&cloud_txt);
+    cloudimage.back().setPosition(Vector2f(physics::getPosition(floor2.back()).x-45,physics::getPosition(floor2.back()).y-5));
+
     if (physics::getPosition(floor2.back()).x>160)
     {
         floor2_x=rand()%100;
@@ -92,6 +117,11 @@ int main()
     }
     floor2.push_back(physics::createBox(world, floor2_x,floor2_y-400,80,2,b2_staticBody));
     floor2.back()->GetFixtureList()->SetRestitution(0);
+    physics::setBlockColor(floor2.back(),Color::Transparent);
+    cloudimage.push_back(RectangleShape(Vector2f(110,10)));
+    cloudimage.back().setTexture(&cloud_txt);
+    cloudimage.back().setPosition(Vector2f(physics::getPosition(floor2.back()).x-45,physics::getPosition(floor2.back()).y-5));
+
     if (physics::getPosition(floor2.back()).x>160)
     {
         floor2_x=rand()%100;
@@ -102,6 +132,11 @@ int main()
     }
     floor2.push_back(physics::createBox(world, floor2_x,floor2_y-500,80,2,b2_staticBody));
     floor2.back()->GetFixtureList()->SetRestitution(0);
+    physics::setBlockColor(floor2.back(),Color::Transparent);
+    cloudimage.push_back(RectangleShape(Vector2f(110,10)));
+    cloudimage.back().setTexture(&cloud_txt);
+    cloudimage.back().setPosition(Vector2f(physics::getPosition(floor2.back()).x-45,physics::getPosition(floor2.back()).y-5));
+
     if (physics::getPosition(floor2.back()).x>160)
     {
         floor2_x=rand()%100;
@@ -112,6 +147,11 @@ int main()
     }
     floor2.push_back(physics::createBox(world, floor2_x,floor2_y-600,80,2,b2_staticBody));
     floor2.back()->GetFixtureList()->SetRestitution(0);
+    physics::setBlockColor(floor2.back(),Color::Transparent);
+    cloudimage.push_back(RectangleShape(Vector2f(110,10)));
+    cloudimage.back().setTexture(&cloud_txt);
+    cloudimage.back().setPosition(Vector2f(physics::getPosition(floor2.back()).x-45,physics::getPosition(floor2.back()).y-5));
+
     if (physics::getPosition(floor2.back()).x>160)
     {
         floor2_x=rand()%100;
@@ -122,6 +162,11 @@ int main()
     }
     floor2.push_back(physics::createBox(world, floor2_x,floor2_y-700,80,2,b2_staticBody));
     floor2.back()->GetFixtureList()->SetRestitution(0);
+    physics::setBlockColor(floor2.back(),Color::Transparent);
+    cloudimage.push_back(RectangleShape(Vector2f(110,10)));
+    cloudimage.back().setTexture(&cloud_txt);
+    cloudimage.back().setPosition(Vector2f(physics::getPosition(floor2.back()).x-45,physics::getPosition(floor2.back()).y-5));
+
     if (physics::getPosition(floor2.back()).x>160)
     {
         floor2_x=rand()%100;
@@ -132,6 +177,11 @@ int main()
     }
     floor2.push_back(physics::createBox(world, floor2_x,floor2_y-800,80,2,b2_staticBody));
     floor2.back()->GetFixtureList()->SetRestitution(0);
+    physics::setBlockColor(floor2.back(),Color::Transparent);
+    cloudimage.push_back(RectangleShape(Vector2f(110,10)));
+    cloudimage.back().setTexture(&cloud_txt);
+    cloudimage.back().setPosition(Vector2f(physics::getPosition(floor2.back()).x-45,physics::getPosition(floor2.back()).y-5));
+
 if (physics::getPosition(floor2.back()).x>160)
     {
         floor2_x=rand()%100;
@@ -142,6 +192,11 @@ if (physics::getPosition(floor2.back()).x>160)
     }
     floor2.push_back(physics::createBox(world, floor2_x,floor2_y-900,80,2,b2_staticBody));
     floor2.back()->GetFixtureList()->SetRestitution(0);
+    physics::setBlockColor(floor2.back(),Color::Transparent);
+    cloudimage.push_back(RectangleShape(Vector2f(110,10)));
+    cloudimage.back().setTexture(&cloud_txt);
+    cloudimage.back().setPosition(Vector2f(physics::getPosition(floor2.back()).x-45,physics::getPosition(floor2.back()).y-5));
+
     if (physics::getPosition(floor2.back()).x>160)
     {
         floor2_x=rand()%100;
@@ -152,6 +207,11 @@ if (physics::getPosition(floor2.back()).x>160)
     }
     floor2.push_back(physics::createBox(world, floor2_x,floor2_y-1000,80,2,b2_staticBody));
     floor2.back()->GetFixtureList()->SetRestitution(0);
+    physics::setBlockColor(floor2.back(),Color::Transparent);
+    cloudimage.push_back(RectangleShape(Vector2f(110,10)));
+    cloudimage.back().setTexture(&cloud_txt);
+    cloudimage.back().setPosition(Vector2f(physics::getPosition(floor2.back()).x-45,physics::getPosition(floor2.back()).y-5));
+
 
 
     //Jump Level
@@ -383,6 +443,11 @@ if (physics::getPosition(floor2.back()).x>160)
 
 
         physics::displayWorld(world,window);
+
+        //cloud drawing
+        for (int i=0; i<cloudimage.size();i++ )
+            window.draw(cloudimage[i]);
+
 
         switch (batt_sprite_draw)
         {
