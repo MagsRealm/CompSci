@@ -55,165 +55,25 @@ int main()
     int floor2_y=4900;
     int floor2_x=0;
 
-    floor2.push_back(physics::createBox(world, rand()%240,floor2_y,80,2,b2_staticBody));
-    floor2.back()->GetFixtureList()->SetRestitution(0);
-    physics::setBlockColor(floor2.back(),Color::Transparent);
-    cloudimage.push_back(RectangleShape(Vector2f(110,10)));
-    cloudimage.back().setTexture(&cloud_txt);
-    cloudimage.back().setPosition(Vector2f(physics::getPosition(floor2.back()).x-45,physics::getPosition(floor2.back()).y-5));
+    for (int i = 0; i != 30; i++) {
+        floor2.push_back(physics::createBox(world, rand()%240,floor2_y,80,2,b2_staticBody));
+        floor2.back()->GetFixtureList()->SetRestitution(0);
+        physics::setBlockColor(floor2.back(),Color::Transparent);
+        cloudimage.push_back(RectangleShape(Vector2f(110,10)));
+        cloudimage.back().setTexture(&cloud_txt);
+        cloudimage.back().setPosition(Vector2f(physics::getPosition(floor2.back()).x-45,physics::getPosition(floor2.back()).y-5));
 
-    if (physics::getPosition(floor2.back()).x>160)
-    {
-        floor2_x=rand()%100;
-    }
-    else
-    {
-        floor2_x=120+rand()%100;
-    }
-    floor2.push_back(physics::createBox(world, floor2_x,floor2_y-100,80,2,b2_staticBody));
-    floor2.back()->GetFixtureList()->SetRestitution(0);
-    physics::setBlockColor(floor2.back(),Color::Transparent);
-    cloudimage.push_back(RectangleShape(Vector2f(110,10)));
-    cloudimage.back().setTexture(&cloud_txt);
-    cloudimage.back().setPosition(Vector2f(physics::getPosition(floor2.back()).x-45,physics::getPosition(floor2.back()).y-5));
+        if (physics::getPosition(floor2.back()).x>160)
+        {
+            floor2_x=rand()%100;
+        }
+        else
+        {
+            floor2_x=120+rand()%100;
+        }
 
-    if (physics::getPosition(floor2.back()).x>160)
-    {
-        floor2_x=rand()%100;
+        floor2_y -= 100;
     }
-    else
-    {
-        floor2_x=120+rand()%100;
-    }
-    floor2.push_back(physics::createBox(world, floor2_x,floor2_y-200,80,2,b2_staticBody));
-    floor2.back()->GetFixtureList()->SetRestitution(0);
-    physics::setBlockColor(floor2.back(),Color::Transparent);
-    cloudimage.push_back(RectangleShape(Vector2f(110,10)));
-    cloudimage.back().setTexture(&cloud_txt);
-    cloudimage.back().setPosition(Vector2f(physics::getPosition(floor2.back()).x-45,physics::getPosition(floor2.back()).y-5));
-
-    if (physics::getPosition(floor2.back()).x>160)
-    {
-        floor2_x=rand()%100;
-    }
-    else
-    {
-        floor2_x=120+rand()%100;
-    }
-    floor2.push_back(physics::createBox(world, floor2_x,floor2_y-300,80,2,b2_staticBody));
-    floor2.back()->GetFixtureList()->SetRestitution(0);
-    physics::setBlockColor(floor2.back(),Color::Transparent);
-    cloudimage.push_back(RectangleShape(Vector2f(110,10)));
-    cloudimage.back().setTexture(&cloud_txt);
-    cloudimage.back().setPosition(Vector2f(physics::getPosition(floor2.back()).x-45,physics::getPosition(floor2.back()).y-5));
-
-    if (physics::getPosition(floor2.back()).x>160)
-    {
-        floor2_x=rand()%100;
-    }
-    else
-    {
-        floor2_x=120+rand()%100;
-    }
-    floor2.push_back(physics::createBox(world, floor2_x,floor2_y-400,80,2,b2_staticBody));
-    floor2.back()->GetFixtureList()->SetRestitution(0);
-    physics::setBlockColor(floor2.back(),Color::Transparent);
-    cloudimage.push_back(RectangleShape(Vector2f(110,10)));
-    cloudimage.back().setTexture(&cloud_txt);
-    cloudimage.back().setPosition(Vector2f(physics::getPosition(floor2.back()).x-45,physics::getPosition(floor2.back()).y-5));
-
-    if (physics::getPosition(floor2.back()).x>160)
-    {
-        floor2_x=rand()%100;
-    }
-    else
-    {
-        floor2_x=120+rand()%100;
-    }
-    floor2.push_back(physics::createBox(world, floor2_x,floor2_y-500,80,2,b2_staticBody));
-    floor2.back()->GetFixtureList()->SetRestitution(0);
-    physics::setBlockColor(floor2.back(),Color::Transparent);
-    cloudimage.push_back(RectangleShape(Vector2f(110,10)));
-    cloudimage.back().setTexture(&cloud_txt);
-    cloudimage.back().setPosition(Vector2f(physics::getPosition(floor2.back()).x-45,physics::getPosition(floor2.back()).y-5));
-
-    if (physics::getPosition(floor2.back()).x>160)
-    {
-        floor2_x=rand()%100;
-    }
-    else
-    {
-        floor2_x=120+rand()%100;
-    }
-    floor2.push_back(physics::createBox(world, floor2_x,floor2_y-600,80,2,b2_staticBody));
-    floor2.back()->GetFixtureList()->SetRestitution(0);
-    physics::setBlockColor(floor2.back(),Color::Transparent);
-    cloudimage.push_back(RectangleShape(Vector2f(110,10)));
-    cloudimage.back().setTexture(&cloud_txt);
-    cloudimage.back().setPosition(Vector2f(physics::getPosition(floor2.back()).x-45,physics::getPosition(floor2.back()).y-5));
-
-    if (physics::getPosition(floor2.back()).x>160)
-    {
-        floor2_x=rand()%100;
-    }
-    else
-    {
-        floor2_x=120+rand()%100;
-    }
-    floor2.push_back(physics::createBox(world, floor2_x,floor2_y-700,80,2,b2_staticBody));
-    floor2.back()->GetFixtureList()->SetRestitution(0);
-    physics::setBlockColor(floor2.back(),Color::Transparent);
-    cloudimage.push_back(RectangleShape(Vector2f(110,10)));
-    cloudimage.back().setTexture(&cloud_txt);
-    cloudimage.back().setPosition(Vector2f(physics::getPosition(floor2.back()).x-45,physics::getPosition(floor2.back()).y-5));
-
-    if (physics::getPosition(floor2.back()).x>160)
-    {
-        floor2_x=rand()%100;
-    }
-    else
-    {
-        floor2_x=120+rand()%100;
-    }
-    floor2.push_back(physics::createBox(world, floor2_x,floor2_y-800,80,2,b2_staticBody));
-    floor2.back()->GetFixtureList()->SetRestitution(0);
-    physics::setBlockColor(floor2.back(),Color::Transparent);
-    cloudimage.push_back(RectangleShape(Vector2f(110,10)));
-    cloudimage.back().setTexture(&cloud_txt);
-    cloudimage.back().setPosition(Vector2f(physics::getPosition(floor2.back()).x-45,physics::getPosition(floor2.back()).y-5));
-
-if (physics::getPosition(floor2.back()).x>160)
-    {
-        floor2_x=rand()%100;
-    }
-    else
-    {
-        floor2_x=120+rand()%100;
-    }
-    floor2.push_back(physics::createBox(world, floor2_x,floor2_y-900,80,2,b2_staticBody));
-    floor2.back()->GetFixtureList()->SetRestitution(0);
-    physics::setBlockColor(floor2.back(),Color::Transparent);
-    cloudimage.push_back(RectangleShape(Vector2f(110,10)));
-    cloudimage.back().setTexture(&cloud_txt);
-    cloudimage.back().setPosition(Vector2f(physics::getPosition(floor2.back()).x-45,physics::getPosition(floor2.back()).y-5));
-
-    if (physics::getPosition(floor2.back()).x>160)
-    {
-        floor2_x=rand()%100;
-    }
-    else
-    {
-        floor2_x=120+rand()%100;
-    }
-    floor2.push_back(physics::createBox(world, floor2_x,floor2_y-1000,80,2,b2_staticBody));
-    floor2.back()->GetFixtureList()->SetRestitution(0);
-    physics::setBlockColor(floor2.back(),Color::Transparent);
-    cloudimage.push_back(RectangleShape(Vector2f(110,10)));
-    cloudimage.back().setTexture(&cloud_txt);
-    cloudimage.back().setPosition(Vector2f(physics::getPosition(floor2.back()).x-45,physics::getPosition(floor2.back()).y-5));
-
-
-
     //Jump Level
     RectangleShape Batt_sprite1;
     Texture Batt_tx1;
@@ -230,6 +90,11 @@ if (physics::getPosition(floor2.back()).x>160)
     RectangleShape Batt_sprite4;
     Texture Batt_tx4;
     Batt_tx4.loadFromFile("battery4.png");
+
+    //WIN SHAPE
+   bool win = false;
+   bool winfade = false;
+
 
 
     //Timers
@@ -279,6 +144,8 @@ if (physics::getPosition(floor2.back()).x>160)
     int launchTime;
     float xMove = 100.0;
 
+
+
     while (window.isOpen()&& !Keyboard::isKeyPressed(Keyboard::Escape))     //the main game loop, exits if someone closes the window
     {
 
@@ -305,7 +172,6 @@ if (physics::getPosition(floor2.back()).x>160)
 
         }   window.clear(); //clears the screen//ends the event loop
 
-        window.draw(skybox);
         skybox.setPosition(Vector2f(0,physics::getPosition(dude).y-406));
 
         cout<<skybox.getPosition().x<<endl;
@@ -343,6 +209,12 @@ if (physics::getPosition(floor2.back()).x>160)
 
             }
         }
+
+
+
+
+
+
         //battery drawing case
         if (Mouse::isButtonPressed(Mouse::Left))
         {
@@ -441,44 +313,67 @@ if (physics::getPosition(floor2.back()).x>160)
 //            window.draw(floor2[i]);
 //        }
 
+        window.draw(skybox);
 
-        physics::displayWorld(world,window);
+        if (!win) {
+            physics::displayWorld(world,window);
 
-        //cloud drawing
-        for (int i=0; i<cloudimage.size();i++ )
-            window.draw(cloudimage[i]);
+            //cloud drawing
+            for (int i=0; i<cloudimage.size();i++ )
+                window.draw(cloudimage[i]);
 
 
-        switch (batt_sprite_draw)
-        {
-            case 1:
-                window.draw(Batt_sprite1);
-                break;
-            case 2:
-                window.draw(Batt_sprite2);
-                break;
-            case 3:
-                window.draw(Batt_sprite3);
-                break;
-            case 4:
-                window.draw(Batt_sprite4);
-                break;
+            switch (batt_sprite_draw)
+            {
+                case 1:
+                    window.draw(Batt_sprite1);
+                    break;
+                case 2:
+                    window.draw(Batt_sprite2);
+                    break;
+                case 3:
+                    window.draw(Batt_sprite3);
+                    break;
+                case 4:
+                    window.draw(Batt_sprite4);
+                    break;
+            }
+
+            switch (Left_Right)
+            {
+                case LEFT:
+                    window.draw(text1);
+                    break;
+                case RIGHT:
+                    window.draw(text2);
+                    break;
+
+
+            }
+        }
+        else {
+            if (skybox.getFillColor().a > 0 && !winfade) {
+                skybox.setFillColor(Color(255, 255, 255, skybox.getFillColor().a - 5));
+            }
+            else winfade = true;
+
+            if (winfade) {
+                dude->SetTransform(b2Vec2(4990/32, 26/32), 0);
+                if (skybox.getFillColor().a < 255) {
+                    skybox.setFillColor(Color(255, 255, 255, skybox.getFillColor().a + 5));
+                }
+                else {
+                    win = false;
+                    winfade = false;
+                }
+            }
         }
 
-        switch (Left_Right)
-        {
-            case LEFT:
-                window.draw(text1);
-                break;
-            case RIGHT:
-                window.draw(text2);
-                break;
 
-
+        //win1573
+        if (physics::getPosition(dude).y<1600){
+             win = true;
         }
-
-
-
         window.display();   //displays everything on the video card to the monitor
     }   //ends the game loop
 
